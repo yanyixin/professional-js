@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+</head>
+<body>
+    <p>ECMAScript  中的函数使用function关键字来生命，后面跟一组参数以及函数体</p>
+    
+    <p>函数执行完return语句之后停止并立即退出</p>
+    <p>如果return后面不带任何返回值，函数在停止执行之后，会返回undefined</p>
+
+    <script>
+        var name = 'yanmeng';
+
+        function thisIsFunction(name) {
+            console.log('my name is ' + name);
+        };
+
+        thisIsFunction(name);
+
+        function getName(name) {
+            return name; // 函数执行完return语句之后停止并立即退出
+            console.log('会执行吗？'); // 永远不会执行
+        }
+        
+        function isReturn(name) {
+            return; // 如果return后面不带任何返回值，函数在停止执行之后，会返回undefined
+        }
+
+        var myname = getName(name);
+        var returnFunction = isReturn(name);
+
+        console.log('getName:',myname,',  isReturn:',returnFunction);
+
+    </script>
+</body>
+</html>

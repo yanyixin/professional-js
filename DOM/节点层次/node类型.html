@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -7,6 +7,61 @@
 		<title>node类型</title>
 	</head>
 	<body>
+		<p>在html页面中，文档元素始终都是< html>元素</p>
+		<div>
+			<p>每个节点都有一个
+			childNodes属性</p>
+		</div>
+		<span></span>
+		<p><b>hasChildNodes()</b>方法，在节点包含一个或者多个子节点的情况下返回true</p>
+		<p><b>ownerDocument</b>：该属性只想表示整个文档的文档节点</p>
 
+		<h2>操作节点</h2>
+		<ul class="method-list">
+			<li>
+				<b>appendChild()</b>:向childNodes列表的<b>末尾</b>添加一个节点
+			</li>
+			<br>
+			<li>
+				<b>insertBefore()</b>:接受两个参数：1、要插入的节点2、作为参照的节点。会在参照的节点前插入新的节点
+			</li>
+			<br>
+			<li>
+				<b>replaceChild()</b>接受两个参数：1、要插入的节点2、要替换的节点。被替换的节点仍然还在文档中，但它在文档中已经没有了自己的位置
+			</li>
+			<br>
+			<li>
+				<b>removeChild()</b>:移除节点
+			</li>
+			<br>
+			<li>
+				<b>cloneNode()</b>:创建调用这个方法的节点的一个完全相同的副本。cloneNode()接受一个boolean值。<b>true为深复制</b>，复制节点及其整个子节点树。<b>false为浅复制</b>，只复制节点本身
+			</li>
+		</ul>
+		<script type="text/javascript">
+			var nodeP = document.querySelector('p');
+			console.log('nodeType',nodeP.nodeType,'nodeName',nodeP.nodeName,'nodeValue',nodeP.nodeValue);
+
+			var nodeDiv = document.querySelector('div');
+			// 这里把换行也输出来了
+			console.log('childNode',nodeDiv.childNodes);
+
+			console.log('previousSibling',nodeDiv.previousSibling,'nextSibling',nodeDiv.previousSibling);
+
+			var nodeSpan = document.querySelector('span');
+
+			console.log('span hasChildNodes',nodeSpan.hasChildNodes());
+			console.log('div hasChildNodes',nodeDiv.hasChildNodes());
+			console.log('ownerDocument',nodeSpan.ownerDocument);
+
+			var methodList = document.querySelector('.method-list'),
+				nodeLi = document.createElement('li'),
+				textLi = document.createTextNode('new li'); // createTextNode()创建文本节点
+			nodeLi.appendChild(textLi);
+			methodList.appendChild(nodeLi); // appendChild()方法
+
+			console.log('深复制',methodList.cloneNode(true));
+			console.log('浅复制',methodList.cloneNode(false));
+		</script>
 	</body>
 </html>

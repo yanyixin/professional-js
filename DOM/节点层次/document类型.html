@@ -7,6 +7,10 @@
 		<title>document类型</title>
 	</head>
 	<body>
+		<input type="text" name="myElement" value="">
+		<div id="myElement"></div>
+
+
 		<script type="text/javascript">
 			console.log('documentElement:',document.documentElement);
 			console.log('body:',document.body);
@@ -14,6 +18,12 @@
 			console.log('title:',document.title);
 			console.log('url:',document.URL); // 页面的url
 			console.log('domain:',document.domain); // 页面的域名
+
+			var getElement = document.getElementById('myElement');
+			console.log('getElement',getElement);
+
+			var divElement = document.getElementsByTagName('input');
+			console.log(divElement.namedItem('myElement'));
 		</script>
 	</body>
 </html>

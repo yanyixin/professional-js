@@ -7,9 +7,23 @@
 		<title>document类型</title>
 	</head>
 	<body>
-		<input type="text" name="myElement" value="">
+		<!-- <input type="text" name="myElement" value=""> -->
 		<div id="myElement"></div>
 
+		<ul>
+			<li>
+				<input type="radio" name="color" id="colorRed">
+				<label for="colorRed">red</label>
+			</li>
+			<li>
+				<input type="radio" name="color" id="colorGreen">
+				<label for="colorGreen">green</label>
+			</li>
+			<li>
+				<input type="radio" name="color" id="colorBlue">
+				<label for="colorBlue">blue</label>
+			</li>
+		</ul>
 
 		<script type="text/javascript">
 			console.log('documentElement:',document.documentElement);
@@ -24,6 +38,17 @@
 
 			var divElement = document.getElementsByTagName('input');
 			console.log(divElement.namedItem('myElement'));
+
+			console.log('取得文档中的所有元素',document.getElementsByTagName('*'));
+
+			console.log('取得所有的单选按钮',document.getElementsByName('color'));
+
+
+			document.write('<b>'+ (new Date()).toString() +'</b>');
+
+			window.onload = function() {
+				document.write('hello');
+			}
 		</script>
 	</body>
 </html>

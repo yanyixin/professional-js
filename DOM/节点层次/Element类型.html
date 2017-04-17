@@ -4,8 +4,16 @@
 	<title>Element类型</title>
 </head>
 <body>
+	<div id="myDiv" data-my-name="div-name"></div>
 	<script type="text/javascript">
-		
+		var div = document.getElementById('myDiv');
+		console.log('tagName',div.tagName,'nodeName:',div.nodeName);
+
+		console.log('div.id:',div.id);
+
+		console.log(div.getAttribute('data-my-name'));
+
+		div.setAttribute('class','div-class');
 	</script>
 </body>
 </html>
